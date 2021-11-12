@@ -54,7 +54,7 @@ class Pelotuda{
   }
   validatepelotudaI(derbar){
     
-     if (dist(this.x, this.y, derbar.getX(), derbar.getY())<25){
+     if (this.x>derbar.x&&this.x<derbar.y+derbar.ancho&&this.y>derbar.y&&this.y<derbar.y+derbar.largo){
       return true
     }else{
        return false
@@ -67,14 +67,14 @@ class Pelotuda{
 
 class Puntaje{
   constructor(){
-    this.a=1;
-    this.b=1;
+    this.a=0;
+    this.b=0;
   }
 
   plusA(Pelotuda){
     textAlign(CENTER);
     textSize(32);
-    text(a,100,100,);
+    //text(a,100,100,);
     if(Pelotuda.getX < 0){
       a++;
     }
@@ -91,7 +91,7 @@ function setup() {
   izqbar = new Barritas(50,450);
   derbar = new Barritas(750,450);
   bolita = new Pelotuda (450,450);
-  puntajeA = new Puntaje();
+  puntosA = new Puntaje();
   
 
 }
@@ -102,7 +102,7 @@ function draw() {
   derbar.createBar();
   bolita.createpelotuda();
   bolita.correpelotuda(); 
-  puntajeA.plusA(bolita);
+  //puntosA.plusA(bolita);
 
 }
 
